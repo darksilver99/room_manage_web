@@ -37,6 +37,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await action_blocks.initConfig(context);
+      await Future.delayed(const Duration(milliseconds: 1000));
       _model.isLoading = false;
       setState(() {});
     });
@@ -85,14 +86,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
         effectsBuilder: () => [
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 200.0.ms,
             duration: 600.0.ms,
             begin: Offset(0.0, 100.0),
             end: Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 200.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -104,14 +105,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
         effectsBuilder: () => [
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 400.0.ms,
             duration: 600.0.ms,
             begin: Offset(0.0, 100.0),
             end: Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 400.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -123,14 +124,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
         effectsBuilder: () => [
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 600.0.ms,
             duration: 600.0.ms,
             begin: Offset(0.0, 100.0),
             end: Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 0.0.ms,
+            delay: 600.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -713,13 +714,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       child: Material(
                         color: Colors.transparent,
                         elevation: 3.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
                         child: Container(
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).info,
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 16.0, 8.0, 16.0),
+                                16.0, 16.0, 16.0, 16.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
