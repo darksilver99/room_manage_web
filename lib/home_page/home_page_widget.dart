@@ -743,119 +743,124 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                   ),
                                 ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (FFAppState().configData.contact[0] !=
-                                            null &&
-                                        FFAppState().configData.contact[0] !=
-                                            '')
-                                      Builder(
-                                        builder: (context) => InkWell(
+                                if (FFAppState().configData.contact.isNotEmpty)
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      if (FFAppState().configData.contact[0] !=
+                                              null &&
+                                          FFAppState().configData.contact[0] !=
+                                              '')
+                                        Builder(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                                0.0, 0.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child: GestureDetector(
+                                                      onTap: () =>
+                                                          FocusScope.of(
+                                                                  dialogContext)
+                                                              .unfocus(),
+                                                      child:
+                                                          InfoCustomViewWidget(
+                                                        title: FFAppState()
+                                                            .configData
+                                                            .contact[0],
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: FaIcon(
+                                              FontAwesomeIcons.phoneSquare,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 32.0,
+                                            ),
+                                          ),
+                                        ),
+                                      if (FFAppState().configData.contact[1] !=
+                                              null &&
+                                          FFAppState().configData.contact[1] !=
+                                              '')
+                                        InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (dialogContext) {
-                                                return Dialog(
-                                                  elevation: 0,
-                                                  insetPadding: EdgeInsets.zero,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                              0.0, 0.0)
-                                                          .resolve(
-                                                              Directionality.of(
-                                                                  context)),
-                                                  child: GestureDetector(
-                                                    onTap: () => FocusScope.of(
-                                                            dialogContext)
-                                                        .unfocus(),
-                                                    child: InfoCustomViewWidget(
-                                                      title: FFAppState()
-                                                          .configData
-                                                          .contact[0],
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                            );
+                                            await launchURL(FFAppState()
+                                                .configData
+                                                .contact[1]);
                                           },
                                           child: FaIcon(
-                                            FontAwesomeIcons.phoneSquare,
+                                            FontAwesomeIcons.line,
                                             color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                                .success,
                                             size: 32.0,
                                           ),
                                         ),
-                                      ),
-                                    if (FFAppState().configData.contact[1] !=
-                                            null &&
-                                        FFAppState().configData.contact[1] !=
-                                            '')
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await launchURL(FFAppState()
-                                              .configData
-                                              .contact[1]);
-                                        },
-                                        child: FaIcon(
-                                          FontAwesomeIcons.line,
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
-                                          size: 32.0,
+                                      if (FFAppState().configData.contact[2] !=
+                                              null &&
+                                          FFAppState().configData.contact[2] !=
+                                              '')
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL(FFAppState()
+                                                .configData
+                                                .contact[2]);
+                                          },
+                                          child: FaIcon(
+                                            FontAwesomeIcons.facebookSquare,
+                                            color: Color(0xFF446EC4),
+                                            size: 32.0,
+                                          ),
                                         ),
-                                      ),
-                                    if (FFAppState().configData.contact[2] !=
-                                            null &&
-                                        FFAppState().configData.contact[2] !=
-                                            '')
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await launchURL(FFAppState()
-                                              .configData
-                                              .contact[2]);
-                                        },
-                                        child: FaIcon(
-                                          FontAwesomeIcons.facebookSquare,
-                                          color: Color(0xFF446EC4),
-                                          size: 32.0,
+                                      if (FFAppState().configData.contact[3] !=
+                                              null &&
+                                          FFAppState().configData.contact[3] !=
+                                              '')
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL(FFAppState()
+                                                .configData
+                                                .contact[3]);
+                                          },
+                                          child: FaIcon(
+                                            FontAwesomeIcons.instagramSquare,
+                                            color: Color(0xFFC72A91),
+                                            size: 32.0,
+                                          ),
                                         ),
-                                      ),
-                                    if (FFAppState().configData.contact[3] !=
-                                            null &&
-                                        FFAppState().configData.contact[3] !=
-                                            '')
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await launchURL(FFAppState()
-                                              .configData
-                                              .contact[3]);
-                                        },
-                                        child: FaIcon(
-                                          FontAwesomeIcons.instagramSquare,
-                                          color: Color(0xFFC72A91),
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                  ].divide(SizedBox(width: 8.0)),
-                                ),
+                                    ].divide(SizedBox(width: 8.0)),
+                                  ),
                               ],
                             ),
                           ),
