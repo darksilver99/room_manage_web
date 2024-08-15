@@ -263,6 +263,30 @@ class _HomePageWidgetState extends State<HomePageWidget>
               height: double.infinity,
               child: Stack(
                 children: [
+                  Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/luxury-classic-modern-bedroom-suite-hotel_105762-1787.jpg',
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Color(0x9B14181B),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -297,6 +321,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
                                               fontSize: 32.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
@@ -313,6 +340,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
